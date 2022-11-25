@@ -1,0 +1,22 @@
+
+	canvas, .canvas {
+
+		/* Older versions of FF */
+	  image-rendering: optimizeSpeed;
+
+	  /* FF 6.0+ */
+	  image-rendering: -moz-crisp-edges;
+
+	  /* Safari */
+	  image-rendering: -webkit-optimize-contrast;
+
+	  /* OS X & Windows Opera (12.02+) */
+	  image-rendering: -o-crisp-edges;
+
+	  /* Awesome future-browsers */
+	  image-rendering: pixelated;
+
+	  /* IE */
+	  -ms-interpolation-mode: nearest-neighbor;
+
+	}

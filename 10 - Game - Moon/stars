@@ -1,0 +1,68 @@
+this.star = function(loc) {
+
+
+
+
+	var r = 2;
+	var r2 = (x+y)/(x/y);
+	var x = this.starLocations[loc].x;
+	var y = this.starLocations[loc].y;
+	var colour = this.starLocations[loc].colour;
+	var rad = this.starLocations[loc].radius;
+	var flicker = this.starLocations[loc].flicker;
+	var radius =  (r)+(r/2)*Math.sin(new Date()/(360+flicker));
+	var a = 0.55;
+
+	var w = h = 0.4*(radius+rad+(loc/(x*y)));
+
+	//this.visuals.rect_centered(x,y,w,h,colour,a);
+	var s = _STAR_RADIUS_MULTIPLIER*(radius+rad+(loc/(x*y)));
+
+	if (s>_STAR_RADIUS_MULTIPLIER*1) s = _STAR_RADIUS_MULTIPLIER*1;
+
+	if (y<this.app.height)
+	if (y<this.app.height)
+	if (y>0)
+		this.visuals._circle(this.starLocations[loc].x,y,s,colour,a);
+
+		var speed = _STAR_RADIUS_MULTIPLIER * -rad * 0.1;
+		if (this.starLocations[loc].x>speed/5)
+		this.starLocations[loc].x-=speed/5;
+		else this.starLocations[loc].x = this.app.width;
+		if (this.starLocations[loc].y>speed/10)
+		this.starLocations[loc].y-=speed/10;
+		else this.starLocations[loc].y = this.app.height;
+
+
+
+
+		/*
+		if (this.starLocations[loc].x+(x/y)>0)
+		if (this.starLocations[loc].x+(x/y)<this.app.client.width)
+		if (y+(x/y*loc)>0)
+		if (y+(x/y*loc)<this.app.client.height)
+		this.visuals._circle(this.starLocations[loc].x+(x/y),y+(x/y*loc),0.1*(radius+rad+(loc/(x*y))),colour,a);
+
+		if (this.starLocations[loc].x+(x/y)>0)
+		if (this.starLocations[loc].x+(x/y)<this.app.client.width)
+		if (y+(x/y*loc/rad)>0)
+		if (y+(x/y*loc/rad)<this.app.client.height)
+		this.visuals._circle(this.starLocations[loc].x+(x/y),y+(x/y*loc/rad),0.1*(radius+rad+(loc/(x*y*loc))),colour,a);
+
+		if (this.starLocations[loc].x+(x/y)>0)
+		if (this.starLocations[loc].x+(x/y)<this.app.client.width)
+		if (y+(x/y*loc/rad)>0)
+		if (y+(x/y*loc/rad)<this.app.client.height)
+		this.visuals._circle(this.starLocations[loc].x+(x/y),y+(x/y*loc/rad),0.1*(radius+rad+(loc/(x*y*loc))),colour,a);
+*/
+
+}
+
+this.starLocations = [];
+
+for(var starLoc = 0; starLoc<=320; starLoc++) {
+	this.starLocations[starLoc] = {x:Math.random()*this.app.client.setWidth,y:Math.random()*this.app.client.setHeight,colour:'#'+Math.floor(Math.random()*16777215).toString(16),
+			radius:-1+Math.random()*0.5,
+			flicker:Math.random()*290,
+		};
+}

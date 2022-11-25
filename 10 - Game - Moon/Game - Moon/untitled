@@ -1,0 +1,27 @@
+
+						if (obj._image_index<obj.image_count)
+							obj._image_index+=obj.image_speed,obj.image_index = Math.floor(obj._image_index);
+					//	this.visuals.image_part(obj.image, obj.x ,obj.y, 1, 1, 1, 70+70*obj.image_index,80,70,80);
+
+					var _MELON_COUNT = 0;
+
+
+					var _Melon = function(){
+
+						return (function(props){
+
+							var _temp =  new _Thingy(props[0],props[1],props[2]);
+					
+							_temp.type = 100;
+
+							_temp.id = _MELON_COUNT;
+
+							_MELON_COUNT++;
+
+							//_MELON(_temp);
+
+							return _temp;
+
+						})(arguments);
+
+					};
